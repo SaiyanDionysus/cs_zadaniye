@@ -59,5 +59,36 @@ class Phone
     }
 }
 
+class Program
+{
+    static void Main()
+    {
+        Phone phone1 = new Phone("123-456-789", "iPhone", 200);
+        Phone phone2 = new Phone("987-654-321", "Xiaomi", 400);
+        Phone phone3 = new Phone();
+
+        Console.WriteLine("Информация о телефонах: ");
+        Console.WriteLine("Телефон 1: ");
+        phone1.DisplayInfo();
+        Console.WriteLine("Телефон 2: ");
+        phone2.DisplayInfo();
+        Console.WriteLine("Телефон 2: ");
+        phone3.DisplayInfo();
+
+        Console.WriteLine("\nЗвонки:");
+        phone1.receiveCall("Андрей");
+        phone2.receiveCall("Евген");
+        phone3.receiveCall("Дима");
+
+        Console.WriteLine("\nНомер первого телефона: " + phone1.getNumber());
+
+        phone1.receiveCall("Иван", "+123-456-789");
+        phone2.receiveCall("Мария", "+987-654-321");
+
+        Console.WriteLine("\nОтправка сообщений: ");
+        phone1.sendMessage("+111-333-444", "+444-543-431");
+        phone2.sendMessage("+934-343-423");
+    }
+}
 
 
